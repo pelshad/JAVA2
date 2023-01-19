@@ -1,4 +1,4 @@
-package sec11.exam01_arrays;
+package ch11.sec11.exam01_arrays;
 
 public class Member implements Comparable<Member>{
     String name;
