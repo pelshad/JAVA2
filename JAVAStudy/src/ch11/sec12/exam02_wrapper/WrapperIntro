@@ -1,0 +1,27 @@
+* Boxing과 Unboxing
+ 1. Boxing : 기본 타입의 값을 포장 객체로 만드는 과정
+ 2. Unboxing : 포장 객체에서 기본 타입의 값을 얻어내는 과정
+ 3. Boxing 코드
+  1) 생성자를 이용 : ex) Integer obj = new Integer(100); or new Integer("100");
+                      Character obj = new Character('가'); 단, Char의 경우 위처럼 ""은 불가
+  2) valueOf() 메소드 이용 : ex) Integer obj = Integer.valueOf(1000);
+ 4. Unboxing 코드
+  - {Type}Value() : ex) num = obj.IntegerValue();
+ 5. 자동 Boxing, Unboxing
+  1) 자동 Boxing 포장 클래스 타입에 기본값이 대입될 경우에 발생
+  - Integer obj = 100; // 자동박싱
+  - List<Integer> list = new ArrayList<>();
+    list.add(100);
+  2) 자동 Unboxing 기본 타입에 포장 객체가 대입될 경우에 발생
+  - Integer obj = new Integer(200);
+    int value1 = obj;        //자동 언박싱
+    int value2 = obj + 100;  //자동 언박싱
+
+* 문자열을 기본타입으로 변환
+ 1. {Type}.parse{Type}("String");
+
+* 포장값 비교
+ 1. 포장 객체는 내부의 값을 비교하기 포장 객체로 ==와 !- 연산자를 할 수 없다.(주소값을 참조하기 때문)
+  - 단, boolean(true,false), char(\u0000~\i007f), byte, short, int(-128 ~ 127)의 경우
+    괄호 안의 범위 내에선 포장 객체로 ==과 != 연산자로 내부 값을 비교할 수 있다.
+ 2. 값을 언박싱해서 비교하거나, equals() 메소드로 내부 값을 비교하는 것이 좋다.
